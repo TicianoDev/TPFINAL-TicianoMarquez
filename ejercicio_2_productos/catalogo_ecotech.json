@@ -1,0 +1,18 @@
+[
+  {
+    "tipo": "PanelSolar",
+    "nombre": "EcoPanel 450",
+    "precio": 289.9,
+    "stock": 12,
+    "potencia_w": 450.0,
+    "eficiencia": 21.5
+  },
+  {
+    "tipo": "PanelSolar",
+    "nombre": "EcoPanel 380",
+    "precio": 239.5,
+    "stock": 8,
+    "potencia_w": 380.0,
+    "eficiencia": 19.8
+  }
+]

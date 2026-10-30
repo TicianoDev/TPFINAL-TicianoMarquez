@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Panel de sustentabilidad</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 760px; margin: 40px auto; padding: 0 16px; color: #20332b; }
+        h1 { color: #176b45; }
+        .tarjeta { background: #f0f7f2; border-radius: 8px; padding: 16px; margin: 12px 0; }
+        table { width: 100%; border-collapse: collapse; }
+        th, td { padding: 10px; border-bottom: 1px solid #d5e4d9; text-align: left; }
+    </style>
+</head>
+<body>
+    <h1>Panel de sustentabilidad</h1>
+    <section class="tarjeta">
+        <h2>Emisiones globales</h2>
+        <p>{{ total_emisiones|floatformat:2 }} kg CO₂</p>
+    </section>
+    <section class="tarjeta">
+        <h2>Planta de mayor consumo</h2>
+        {% if planta_mayor_consumo %}
+            <p>{{ planta_mayor_consumo }} — {{ consumo_maximo_kwh|floatformat:2 }} kWh</p>
+        {% else %}
+            <p>No hay registros de consumo.</p>
+        {% endif %}
+    </section>
+    <section class="tarjeta">
+        <h2>Detalle por planta</h2>
+        <table>
+            <thead><tr><th>Planta</th><th>Consumo (kWh)</th><th>Emisiones (kg CO₂)</th></tr></thead>
+            <tbody>
+                {% for fila in detalle_plantas %}
+                    <tr>
+                        <td>{{ fila.planta }}</td>
+                        <td>{{ fila.consumo_kwh|floatformat:2 }}</td>
+                        <td>{{ fila.emisiones|floatformat:2 }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </section>
+</body>
+</html>
