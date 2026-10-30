@@ -8,7 +8,7 @@
 ![Pruebas](https://img.shields.io/badge/Tests-26%20OK-238636?style=flat-square)
 
 
-**Desarrollado y probado en PyCharm Professional.** También se puede ejecutar desde una terminal, sin depender del IDE.
+**Desarrollado y probado en PyCharm Pro**
 
 
 ## Pruebas automatizadas
